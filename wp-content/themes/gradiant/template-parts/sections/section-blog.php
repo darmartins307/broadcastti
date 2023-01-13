@@ -35,51 +35,7 @@
 					while($gradiant_wp_query->have_posts()):$gradiant_wp_query->the_post();
 					
 					?>
-						<article class="post-items">
-							<?php if ( has_post_thumbnail() ) { ?>
-								<figure class="post-image post-image-absolute">
-									<div class="featured-image">
-										<a href="<?php echo esc_url(get_permalink()); ?>" class="post-hover">
-											<?php the_post_thumbnail(); ?>
-										</a>
-									</div>
-								</figure>
-							<?php } ?>
-							<div class="post-content">
-								<span class="post-date"> <a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"><span><?php echo esc_html(get_the_date('j')); ?></span><?php echo esc_html(get_the_date('M, Y')); ?></a> </span>
-								<?php     
-									if ( is_single() ) :
-									
-									the_title('<h5 class="post-title">', '</h5>' );
-									
-									else:
-									
-									the_title( sprintf( '<h5 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h5>' );
-									
-									endif; 
-								?> 
-								<div class="post-footer">
-									<?php 
-										the_content( 
-												sprintf( 
-													__( 'Read More', 'gradiant' ), 
-													'<span class="screen-reader-text">  '.esc_html(get_the_title()).'</span>' 
-												) 
-											);
-									 ?>
-									<span class="post-count">
-										<?php
-											if($post_count<9):
-												$post_count=$post_count + 1;
-												echo sprintf(esc_html('0 %s','gradiant'), $post_count);
-											else:		
-												echo esc_html($post_count + 1);
-											endif;
-										?>
-									</span>
-								</div>
-							</div>
-						</article>
+
 					<?php 
 						endwhile; 
 						}
