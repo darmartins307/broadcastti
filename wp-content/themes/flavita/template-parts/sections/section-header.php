@@ -18,7 +18,7 @@ if ( get_header_image() ) : ?>
 						<div class="theme-mobile-menu">
 							<div class="mobile-logo">
 								<div class="logo">
-									<h1>teste <h1>
+									<h1>teste </h1>
 									 <?php do_action('gradiant_logo_content'); ?>
 								</div>
 							</div>
